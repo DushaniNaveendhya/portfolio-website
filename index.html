@@ -211,7 +211,10 @@
                 <h2 class="section-title gradient-text">My Projects</h2>
                 <div class="section-divider"></div>
                 
-                <div class="projects-grid">
+                <!-- Web Applications Sub-section -->
+                <div class="subsection">
+                    <h3 class="subsection-title">Web Applications</h3>
+                    <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-icon">🏥</div>
                         <h3> Ayurvedic Medicine & Clinic System</h3>
@@ -339,7 +342,108 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <!-- Mobile Applications Sub-section -->
+        <div class="subsection">
+            <h3 class="subsection-title">Mobile Applications</h3>
+                
+                <div class="mobile-apps-grid">
+                    <div class="mobile-app-card">
+                        <div class="project-icon">😊</div>
+                        <h3>DailyBloom</h3>
+                        <p class="project-description">DailyBloom is a personal wellness Android application designed to help users cultivate healthy habits, track their moods, and maintain daily balance in a simple and engaging way. Developed using Android Studio and Kotlin, the app focuses on promoting mindfulness and consistency in users' daily routines through interactive features and smart reminders.</p>
+                        
+                        <div class="project-features">
+                            <h4>📋 Key Features:</h4>
+                            <ul class="feature-list">
+                                <li><strong>Daily Habit Tracker</strong>
+                                    <ul>
+                                        <li>Add, edit, and delete wellness habits such as drinking water, meditating, exercising, or journaling</li>
+                                        <li>Mark habits as completed with check boxes</li>
+                                        <li>Daily progress indicator showing overall percentage of completed habits</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Mood Journal with Emoji Selector</strong>
+                                    <ul>
+                                        <li>Log emotions with date, time, and emoji representing mood</li>
+                                        <li>History view for reflecting on emotional patterns over time</li>
+                                        <li>Encourages self-awareness and emotional well-being</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Hydration Reminder</strong>
+                                    <ul>
+                                        <li>Custom notifications at user-defined intervals</li>
+                                        <li>Ensures proper hydration throughout the day</li>
+                                        <li>Supports physical health maintenance</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <p class="project-description"><strong>Skills Demonstrated:</strong> Android app development, Kotlin programming, UI/UX design for mobile wellness applications, and implementation of notification systems for habit formation.</p>
+                        <p class="project-detail"><strong>Technologies:</strong> Android Studio, Kotlin</p>
+                        <p class="project-detail"><strong>Role:</strong> Mobile Developer</p>
+                        
+                        <div class="mobile-app-images">
+                            <div class="mobile-app-image">
+                                <img src="splash.png" alt="DailyBloom App Screen 1" class="mobile-app-img">
+                            </div>
+                            <div class="mobile-app-image">
+                                <img src="home.png" alt="DailyBloom App Screen 2" class="mobile-app-img">
+                            </div>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://github.com/DushaniNaveendhya/DailyBloom" target="_blank" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-app-card">
+                        <div class="project-icon">📱</div>
+                        <h3>Mobile App Title 2</h3>
+                        <p class="project-description">This mobile application project was developed to demonstrate key features and functionality for mobile users.</p>
+                        
+                        <div class="project-features">
+                            <h4>📋 Key Features:</h4>
+                            <ul class="feature-list">
+                                <li><strong>Feature Category 1</strong>
+                                    <ul>
+                                        <li>Sub-feature description</li>
+                                        <li>Sub-feature description</li>
+                                        <li>Sub-feature description</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Feature Category 2</strong>
+                                    <ul>
+                                        <li>Sub-feature description</li>
+                                        <li>Sub-feature description</li>
+                                        <li>Sub-feature description</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <p class="project-description"><strong>Skills Demonstrated:</strong> Mobile app development principles, UI/UX design for mobile devices, and responsive design for different screen sizes.</p>
+                        <p class="project-detail"><strong>Technologies:</strong> Flutter, Dart</p>
+                        <p class="project-detail"><strong>Role:</strong> Mobile Developer</p>
+                        
+                        <div class="mobile-app-images">
+                            <div class="mobile-app-image">
+                                <img src="mobile-app-3.png" alt="Mobile App 2 Screen 1" class="mobile-app-img">
+                            </div>
+                            <div class="mobile-app-image">
+                                <img src="mobile-app-4.png" alt="Mobile App 2 Screen 2" class="mobile-app-img">
+                            </div>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- Education Section -->
         <section class="section education-section" id="education">
@@ -463,7 +567,7 @@
                         <p class="contact-description">
                             Feel free to reach out to me for opportunities, collaborations, or just to say hello!
                         </p>
-                        <a href="#" class="btn btn-primary">📄 Download Resume</a>
+                        <button type="button" onclick="downloadResumeDirectly()" class="btn btn-primary">📄 Download Resume</button>
                     </div>
                     
                     <form action="https://formspree.io/f/mjgkpeon" method="POST" id="contactForm" class="contact-form">
@@ -491,6 +595,24 @@
         <div class="modal-caption" id="modalCaption"></div>
     </div>
     
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="resume-modal">
+        <div class="resume-modal-content">
+            <span class="resume-close-btn">&times;</span>
+            <h2>My Resume</h2>
+            <div class="resume-container">
+                <iframe id="resumeFrame" src="" width="100%" height="600px" frameborder="0"></iframe>
+            </div>
+            <div class="resume-actions">
+                <button type="button" onclick="downloadResumeDirectly()" class="btn btn-primary">📥 Download Resume</button>
+            </div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
+                </div>
+            </div>
+        </div>
+        
 </body>
 </html>

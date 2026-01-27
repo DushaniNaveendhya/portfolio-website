@@ -143,3 +143,57 @@ function closeModal() {
     modalImg.src = '';
     modalCaption.textContent = '';
 }
+
+// Resume Modal Functions
+function openResumeModal(event) {
+    event.preventDefault();
+    
+    // Show the modal
+    document.getElementById('resumeModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    
+    // Set the resume file path - you'll need to update this with your actual resume file
+    const resumePath = 'resume.pdf'; // Change this to your actual resume file path
+    document.getElementById('resumeFrame').src = resumePath;
+    document.getElementById('downloadResumeBtn').href = resumePath;
+}
+
+// Function to handle direct download
+function downloadResumeDirectly() {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = 'resume.pdf'; // Update this with your actual resume file path
+    link.download = 'Dushani_Naveendhya_Resume.pdf'; // You can customize the downloaded file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Close resume modal when close button is clicked
+const resumeCloseBtn = document.querySelector('.resume-close-btn');
+if (resumeCloseBtn) {
+    resumeCloseBtn.addEventListener('click', function() {
+        closeResumeModal();
+    });
+}
+
+// Close resume modal when clicking outside the content
+document.getElementById('resumeModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeResumeModal();
+    }
+});
+
+// Close resume modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('resumeModal').style.display === 'flex') {
+        closeResumeModal();
+    }
+});
+
+// Function to close the resume modal
+function closeResumeModal() {
+    document.getElementById('resumeModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    document.getElementById('resumeFrame').src = '';
+}
