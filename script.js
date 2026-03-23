@@ -162,7 +162,7 @@ function openResumeModal(event) {
 function downloadResumeDirectly() {
     // Create a temporary link element
     const link = document.createElement('a');
-    link.href = 'resume.pdf'; // Update this with your actual resume file path
+    link.href = 'Resume.pdf'; // Update this with your actual resume file path
     link.download = 'Dushani_Naveendhya_Resume.pdf'; // You can customize the downloaded file name
     document.body.appendChild(link);
     link.click();
