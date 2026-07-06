@@ -816,12 +816,6 @@ body {
     border: 1px solid rgba(167, 139, 250, 0.3);
 }
 
-.certification-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* Mobile Apps Section */
 .mobile-apps-grid {
     display: grid;
@@ -1159,6 +1153,24 @@ footer p {
     font-size: 1.2rem;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
+}
+
+/* Styles for AquaChamp reports (moved from inline) */
+.project-reports .project-report {
+  color: #0b66ff;
+  text-decoration: underline;
+  transition: opacity 0.15s ease;
+}
+
+.project-reports .project-report:not(:last-child) {
+  margin-right: 12px;
+}
+
+/* ensure good contrast on different backgrounds */
+.project-reports .project-report:hover,
+.project-reports .project-report:focus {
+  opacity: 0.9;
+  outline: none;
 }
 
 /* Responsive Design */
